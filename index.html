@@ -1,181 +1,780 @@
-<head>
-    ...
-<link rel="icon" type="image/x-icon" href="https://www.emiia.ru/emiia.ico" />
-    <link rel="icon" href="https://www.emiia.ru/emiia.ico" type="image/x-icon" />
-    <link rel="icon" href="/emiia.ico?v=2" type="image/x-icon" />
-    <link rel="stylesheet" href="fm.revealator.jquery.min.css">
-<script src="https://emiia.github.io/svg.github.io/jquery-1.11.3.min.js"></script>
-<script src="https://emiia.github.io/svg.github.io/fm.revealator.jquery.min.js"></script>
-    ...
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/CBAD0339-C0AC-D64C-B92A-217C4137F522/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/A451E30B-58AD-A94F-9AFD-4A25C1123B4C/abn/main.css"/><base href="https://obninsksite.ru/" />
+    <title>jQuery анимация для сайта - эффекты появления DIV блоков</title>
+    <meta name="description" content="Уже давно вошло в моду применять на Landing Page анимацию появления блоков при скроллинге страницы. Если этим не злоупотреблять, то красивые эффекты помогут сделать сайт интересней." />
+    <meta name="keywords" content="jQuery анимация для сайта" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/assets/theme/images/favicon.png">
+    <link href="/assets/theme/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/theme/css/style.css" rel="stylesheet"> 
+    <link href="/assets/theme/css/main.css" rel="stylesheet"> 
+    <link href="/assets/theme/css/loader-new.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="/assets/theme/animation/fm.revealator.jquery.min.css" rel="stylesheet"> 
+    <meta name="CatCute0fb2a3a6e" content="BAC7D8B9AA2293DC120D7527A7F2358CY1822" />
+    <!--[if lt IE 9]>
+		 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script >
+		 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->  
+  <script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="/assets/components/syntaxhighlighter/scripts/shBrushPlain.js"></script>
+<link rel="stylesheet" href="/assets/components/syntaxhighlighter/css/core.css" type="text/css" />
+<link rel="stylesheet" href="/assets/components/syntaxhighlighter/css/theme/Default.css" type="text/css" />
+<script type="text/javascript">TicketsConfig={"ctx":"web","jsUrl":"\/assets\/components\/tickets\/js\/web\/","cssUrl":"\/assets\/components\/tickets\/css\/web\/","actionUrl":"\/assets\/components\/tickets\/action.php","close_all_message":"\u0437\u0430\u043a\u0440\u044b\u0442\u044c \u0432\u0441\u0435","tpanel":0,"enable_editor":1};</script>
+<script type="text/javascript">TicketsConfig.editor={ticket: {onTab: {keepDefault:false, replaceWith:"	"}
+		,markupSet: [
+			{name:"Bold", className: "btn-bold", key:"B", openWith:"<b>", closeWith:"</b>" }
+			,{name:"Italic", className: "btn-italic", key:"I", openWith:"<i>", closeWith:"</i>"  }
+			,{name:"Underline", className: "btn-underline", key:"U", openWith:"<u>", closeWith:"</u>" }
+			,{name:"Stroke through", className: "btn-stroke", key:"S", openWith:"<s>", closeWith:"</s>" }
+			,{separator:"---------------" }
+			,{name:"Bulleted List", className: "btn-bulleted", openWith:"	<li>", closeWith:"</li>", multiline:true, openBlockWith:"<ul>\n", closeBlockWith:"\n</ul>"}
+			,{name:"Numeric List", className: "btn-numeric", openWith:"	<li>", closeWith:"</li>", multiline:true, openBlockWith:"<ol>\n", closeBlockWith:"\n</ol>"}
+			,{separator:"---------------" }
+			,{name:"Quote", className: "btn-quote", openWith:"<blockquote>", closeWith:"</blockquote>"}
+			,{name:"Code", className: "btn-code", openWith:"<code>", closeWith:"</code>"}
+			,{name:"Link", className: "btn-link", openWith:"<a href=\"[![Link:!:http://]!]\">", closeWith:"</a>" }
+			,{name:"Picture", className: "btn-picture", replaceWith:"<img src=\"[![Source:!:http://]!]\" />" }
+			,{separator:"---------------" }
+			,{name:"Cut", className: "btn-cut", openWith:"<cut/>" }
+		]},comment: {onTab: {keepDefault:false, replaceWith:"	"}
+		,markupSet: [
+			{name:"Bold", className: "btn-bold", key:"B", openWith:"<b>", closeWith:"</b>" }
+			,{name:"Italic", className: "btn-italic", key:"I", openWith:"<i>", closeWith:"</i>"  }
+			,{name:"Underline", className: "btn-underline", key:"U", openWith:"<u>", closeWith:"</u>" }
+			,{name:"Stroke through", className: "btn-stroke", key:"S", openWith:"<s>", closeWith:"</s>" }
+			,{separator:"---------------" }
+			,{name:"Quote", className: "btn-quote", openWith:"<blockquote>", closeWith:"</blockquote>"}
+			,{name:"Code", className: "btn-code", openWith:"<code>", closeWith:"</code>"}
+			,{name:"Link", className: "btn-link", openWith:"<a href=\"[![Link:!:http://]!]\">", closeWith:"</a>" }
+			,{name:"Picture", className: "btn-picture", replaceWith:"<img src=\"[![Source:!:http://]!]\" />" }
+		]}};</script>
+<link rel="stylesheet" href="/assets/components/tickets/js/web/editor/editor.css" type="text/css" />
+<link rel="stylesheet" href="/assets/components/tickets/css/web/default.css" type="text/css" />
+<script type="text/javascript">TicketsConfig.formBefore = 0;TicketsConfig.thread_depth = 0;</script>
+<link rel="stylesheet" href="/assets/components/hybridauth/css/web/default.css" type="text/css" />
 </head>
+<body>
+<!--div class="loaderArea">
+   <div class="loader"></div>
+</div-->
+    <div class="container-fluid">
+         <div class="preloader">
+         <div class="clear-load preloader-load">
+         <span></span>
+         </div>
+         </div>
+    </div>	
 
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+      	<div class="row">
+      		<div class="col-md-9 col-sm-8 menu">
+		      	<div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="/" title="Главная страница"><span>Обнинск</span> <span>сайт</span></a>
+		        </div>
+		        <div id="navbar" class="collapse navbar-collapse">
+		          <ul class="nav navbar-nav">
+		            <li id="service-menu"><a href="/index/services">Услуги</a></li>
+		            <li id="port"><a href="/portfolio">Портфолио</a></li>
+		            <li id="template"><a href="/free-template">Шаблоны</a></li>
+		            <li><a href="/blog">Блог</a></li>
+		          </ul>
+		        </div>
+      		</div>
+      		<div class="col-md-3 col-sm-4 offer hidden-xs">
+      			<a href="tel:+79997354578">+7 (999) 735-45-78</a>
+      		</div>
+      	</div>
+      </div>
+    </nav>
 
-<link rel="icon" type="image/x-icon" href="https://www.emiia.ru/emiia.ico" />
-<link rel="icon" href="https://www.emiia.ru/emiia.ico" type="image/x-icon" />
-<link rel="icon" href="/emiia.ico?v=2" type="image/x-icon" />
-<div dir="ltr" style="text-align: left;" trbidi="on">
-<div dir="ltr" style="text-align: left;" trbidi="on">
-<div dir="ltr" trbidi="on">
+    <section id="blog-header">
+    	<div class="container">
+    		<div class="row">
+					<div class="col-md-9 col-sm-8 hidden-xs">
+					    <ul id="breadcrumb"><li><a href="/"><i class="glyphicon glyphicon-home"></i> <span class="sr-only">Главная</span></a> </li>
+<li><a href="blog">Блог</a></li>
+<li><a href="blog/javascript-and-jquery">Javascript & jQuery</a></li>
+<li class="current"><a href="#">jQuery анимация для сайта - эффекты появления DIV блоков</a></li></ul>
+					</div>
+					<div class="col-md-3 col-sm-4 hidden-xs">
+                        <div class="input-append-search">
+<form style="background: #f0f0f0; padding: 5px; border: 1px solid #e5e5e5;" class="sisea-search-form" action="search" method="get">
+  <fieldset>
+    <input type="text" name="search" id="search" value="" placeholder="Поиск по блогу..." />
+    <input type="hidden" name="id" value="48" /> 
+    <input type="submit"  class="btn-search" value="Найти" />
+  </fieldset>
+</form>
+</div>
 
+			
+			
+					</div>
+    		</div>
+    	</div>
+    </section>
 
-<div>
+		<section id="blog-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+					    
+						<h1>jQuery анимация для сайта - эффекты появления DIV блоков</h1>
+						
+						<img class="top-img" src="/assets/theme/images/empty.png" alt="jQuery анимация для сайта - эффекты появления DIV блоков">
+						 <div class="ticket-meta row" data-id="38">
+	<span class="col-md-5 hidden-xs">
+		<i class="glyphicon glyphicon-calendar"></i> 17 декабря 2017, 15:46
+		&nbsp;&nbsp;
+		<i class="glyphicon glyphicon-user"></i>  Alex
+	</span>
+	<span class="col-md-3"><a href="blog/javascript-and-jquery"><i class="glyphicon glyphicon-folder-open"></i> Javascript & jQuery</a></span>
+	<span class="col-md-2">
+		<span class="ticket-star"><i class="glyphicon glyphicon-star unstared star"></i> <span class="ticket-star-count">1</span></span>
+		&nbsp;&nbsp;
+		<i class="glyphicon glyphicon-eye-open"></i> 4631
+	</span>
+	<span class="col-md-2 pull-right ticket-rating inactive">
+		<span class="vote plus" title="Нравится">
+			<i class="glyphicon glyphicon-arrow-up"></i>
+		</span>
+		<span class="rating positive" title="Всего 1: ↑1 и ↓0">+1</span>
+		<span class="vote minus" title="Не нравится">
+			<i class="glyphicon glyphicon-arrow-down"></i>
+		</span>
+	</span>
+</div>
 
+						
+						
+						<p>Уже давно вошло в моду применять на Landing Page анимацию появления блоков при скроллинге страницы. Если этим не злоупотреблять, то красивые эффекты помогут сделать сайт интересней.  </p>
+<p>В этом уроке мы реализуем анимацию используя jQuery плагин Revealator. Первым делом его нужно скачать и подключить:</p>
+<pre class="brush:html">
+      <link rel="stylesheet" href="fm.revealator.jquery.min.css">
+      <script src="js/jquery-1.11.3.min.js"></script>
+      <script src="js/fm.revealator.jquery.min.js"></script>
+</pre>
+<br/>
+<a href="/assets/theme/upload/revealator.zip" class="btn hvr-trim btn-lg" style="display: block;width: 33%;">Скачать плагин Revealator</a>
+<br/>
+<p>Теперь осталось обернуть наши div блоки в нужный класс.</p>
+<h3>Параметры jQuery плагина Revealator</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Класс</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>revealator-fade</td>
+      <td>Обычное появление элемента</td>
+    </tr>
+    <tr>
+      <td>revealator-rotateleft</td>
+      <td>Появление элемента с легким поворотом влево</td>
+    </tr>
+    <tr>
+      <td>revealator-rotateright</td>
+      <td>Появление элемента с легким поворотом вправо</td>
+    </tr>
+    <tr>
+      <td>revealator-slideleft</td>
+      <td>Появление элемента слайдом справа на лево</td>
+    </tr>
+    <tr>
+      <td>revealator-slideright</td>
+      <td>Появление элемента слайдом слева на право</td>
+    </tr>
+    <tr>
+      <td>revealator-slideup</td>
+      <td>Появление элемента слайдом снизу на вверх</td>
+    </tr>
+    <tr>
+      <td>revealator-zoomin</td>
+      <td>Появление элемента с эффектом увеличения от большого к меньшему</td>
+    </tr>
+    <tr>
+      <td>revealator-zoomout</td>
+      <td>Появление элемента с эффектом увеличения от меньшего к большему</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Задержка</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Класс</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>revealator-delay1</td>
+      <td>Установить задержку эффекта на 100ms</td>
+    </tr>
+    <tr>
+      <td>revealator-delay2</td>
+      <td>Установить задержку эффекта на 200ms</td>
+    </tr>
+    <tr>
+      <td>revealator-delay3</td>
+      <td>Установить задержку эффекта на 300ms</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>revealator-delay20</td>
+      <td>Установить задержку эффекта на 2000ms</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Продолжительность</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Класс</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>revealator-duration1</td>
+      <td>Установить длительность эффекта на 100ms</td>
+    </tr>
+    <tr>
+      <td>revealator-duration2</td>
+      <td>Установить длительность эффекта на 200ms</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>revealator-duration20</td>
+      <td>Установить длительность эффекта на 2000ms</td>
+    </tr>
+  </tbody>
+</table>
+<p style="background: #fff31a;padding: 15px;color: #000; border: 1px solid;">При добавлении класса <b>revealator-once</b> к элементам, анимация блоков будет происходить лишь один раз. При отсутствии этого класса, анимация будет повторяться при прокрутке вверх и в низ.</p>
+<h2>Как это работает?</h2>
+<hr>
+<h3>Анимация скольжения вверх</h3>
+<pre class="brush:html">
+     <div class="revealator-slideup revealator-once">
+        <img src="#" alt="анимация скольжения вверх">
+    </div>
     
-    <div class="revealator-rotateleft revealator-once revealator-below">
-    <img src="https://emiia.github.io/svg.github.io/rob.gif" alt="анимация поворота влево">
-</div>
- 
-<div class="revealator-rotateleft revealator-delay1 revealator-once revealator-below">
-    <img src="https://emiia.github.io/svg.github.io/rob.gif" alt="анимация поворота влево с задержкой эффекта на 100ms">
-</div>
- 
-<div class="revealator-rotateleft revealator-delay2 revealator-once revealator-below">
-    <img src="https://emiia.github.io/svg.github.io/rob.gif" alt="анимация поворота влево с задержкой эффекта на 200ms">
-</div>
+    <div class="revealator-slideup revealator-delay1 revealator-once">
+        <img src="#" alt="анимация скольжения вверх с задержкой эффекта на 100ms">
+    </div>
     
+    <div class="revealator-slideup revealator-delay2 revealator-once">
+        <img src="#" alt="анимация скольжения вверх с задержкой эффекта на 200ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-slideup revealator-once">
+    <img src="/assets/theme/images/blog/1.jpg" alt="анимация скольжения вверх" style="float: left;margin-right: 3px;">
 </div>
-<div style="text-align: center;">
-НАУЧНОЕ ЦИТИРОВАНИЕ</div>
-<div style="text-align: center;">
-
+<div class="revealator-slideup revealator-delay1 revealator-once">
+    <img src="/assets/theme/images/blog/2.jpg" alt="анимация скольжения вверх с задержкой эффекта на 100ms" style="float: left;margin-right: 3px;">
 </div>
-<div style="text-align: center;">
-
-</div>
-<div style="text-align: center;">
-Учебник для магистратуры "Криминология цифрового мира" В. С. Овчинский. — М. : Норма ИНФРАМ, 2018. — 352 с. ISBN 978-5-91768-896-1</div>
-<div style="text-align: center;">
-(ЭМИИА стр. 316, раздел IV) </div>
-<div dir="ltr" trbidi="on">
-<div style="text-align: center;">
-<iframe height="480" src="https://emiia.github.io/img/Criminology.pdf" width="640"></iframe>
-</div>
-<div style="text-align: center;">
-<span style="color: black;"><a href="https://emiia.github.io/img/Criminology.pdf"><span style="color: black;">→ PDF</span></a>&nbsp;</span></div>
-<div style="text-align: center;">
-
-</div>
-<div style="text-align: center;">
-
-
-</div>
-<div style="text-align: center;">
-Сборник научных трудов по материалам I Международной научно-практической конференции «Ключевые проблемы и передовые разработки в современной науке». </div>
-<div style="text-align: center;">
-— Международный научно-информационный центр «Наукосфера». Смоленск: ООО «Новаленсо», 2017. 238 с. ISBN 978-5-906978-07-3</div>
-<div style="text-align: center;">
-(ЭМИИА стр. 122, раздел V)</div>
-<div dir="ltr" trbidi="on">
-<div style="text-align: center;">
-<iframe height="480" src="https://www.emiia.ru/Klyuch-probl-i-per-razrab-okt-2017.pdf" width="640"></iframe>
-</div>
-<div style="text-align: center;">
-<a href="https://www.emiia.ru/Klyuch-probl-i-per-razrab-okt-2017.pdf"><span style="color: black;">→ PDF</span></a>&nbsp;</div>
-<div>
-
-
-
-<div style="text-align: center;">
-Сборник докладов ХХХVII всероссийской научно-технической конференции</div>
-<div style="text-align: center;">
-Подписано в печать 26.06.2018.г.&nbsp; Печ.л. 21,75. Уч.-изд. л. 15,13. Изд. № 114. Зак.65 Издательство Военной академии РВСН имени Петра Великого (филиал в г. Серпухове Московской области), 299 с.</div>
-<div style="text-align: center;">
-ISBN 978-5-91954-174-5 (общий) 978-5-91954-180-6 (часть 6)</div>
-<div style="text-align: center;">
-(ЭМИИА стр. 96, раздел I)</div>
-<div dir="ltr" trbidi="on">
-<div style="text-align: center;">
-<iframe height="480" src="https://emiia.github.io/img/Collection6.pdf" width="640"></iframe>
-</div>
-<div style="text-align: center;">
-<a href="https://emiia.github.io/img/Collection6.pdf"><span style="color: black;">→ PDF </span></a>&nbsp;</div>
-<div style="text-align: center;">
-</div>
+<div class="revealator-slideup revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/3.jpg" alt="анимация скольжения вверх с задержкой эффекта на 200ms">
 </div>
 
-
-
-<div style="text-align: center;">
-Маркетинг и логистика Научно-практический журнал № 2 (10) 2017. Выявление фальсификации продукции марки «Louis Vuitton». Редакция А.А. Кузнецова, А.С. Иванова, А.В. Кузнецова.&nbsp;<span style="text-align: center;">2017. – 147 с.</span></div>
-<div style="text-align: center;">
-(ЭМИИА стр. 147, раздел I)&nbsp;</div>
-<div style="text-align: center;">
-<div dir="ltr" style="text-align: left;" trbidi="on">
-<div style="text-align: center;">
-<iframe height="480" src="https://emiia.github.io/img/ML-210-2017.pdf" width="640"></iframe>
-</div>
-<div style="text-align: center;">
-<a href="https://emiia.github.io/img/ML-210-2017.pdf"><span style="color: black;">→ PDF </span></a>&nbsp;</div>
-</div>
-</div>
-</div>
-<div>
-&nbsp;&nbsp;</div>
-<div>
-
-</div>
-<div style="text-align: center;">
-
-
-</div>
-<div style="text-align: center;">
-НАУЧНЫЕ ПУБЛИКАЦИИ</div>
-<div style="text-align: center;">
-
-
-</div>
-<div style="text-align: center;">
-Сборник материалов научно-технической конференции с представителями сектора исследований и разработок, коммерческого сектора, высшего профессионального образования Крымского федерального округа в рамках участия в 2015 году в реализации федеральных целевых программ и внепрограммных мероприятий, заказчиком которых является  Минобрнауки России, г. Севастополь, 01-02  декабря 2015 г. / Редакция Е.Б. Мелков, В.А. Куликов, А.С. Слепокуров. – Севастополь: СРО ВОИР, 2017. – 167 с. ISBN 978-966-8389-94-8 </div>
-<div style="text-align: center;">
-
-(ЭМИИА стр. 146, 149, 164 раздел I, В.В. Старостин, А.Н. Люман, Н.В. Филиппова):
-
-1) Радиочастотная идентификация&nbsp; (программно-аппаратное решение, стр. 146, В.В. Старостин);
-2) Технология сканирования (программное решение, стр. 149, В.В. Старостин, А.Н. Люман);
-3) Машинное зрение на принципах когнитивной радиооптики (программно-аппаратное решение, стр. 164, В.В. Старостин, А.Н. Люман, Н.В. Филиппова).&nbsp;</div>
-<div dir="ltr" style="text-align: center;" trbidi="on">
-<iframe height="480" src="https://www.emiia.ru/%D0%A1ollectionMON.pdf" width="640"></iframe>
-</div>
-<div style="text-align: center;">
-<a href="https://www.emiia.ru/%D0%A1ollectionMON.pdf"><span style="color: black;">→ PDF </span></a>&nbsp;</div>
-</div>
-</div>
-</div>
-<div>
-&nbsp;&nbsp;</div>
-<div>
-
-<div style="text-align: center;">
-
-</div>
-<div style="text-align: center;">
-
-
-
-
-
-</div>
-<div>
-<div style="text-align: center;">
-
-</div>
-<div style="text-align: center;">
-GOOGLE АКАДЕМИЯ&nbsp;</div>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://scholar.google.ru/citations?user=ffHMwpwAAAAJ&amp;hl"><img border="0" data-original-height="113" data-original-width="295" src="https://4.bp.blogspot.com/-jS-0s4nBRdA/XIYcFUVpIaI/AAAAAAAAHE8/5O6OY7QUhugNKuNeC-MNKR2MNwI9lIHAQCLcBGAs/s1600/Google_Scholar_logo_2015.PNG" /></a></div>
-<div class="separator" style="clear: both; text-align: center;">
-
-</div>
-<div style="text-align: center;">
-<a href="https://scholar.google.ru/citations?user=ffHMwpwAAAAJ&amp;hl"><span style="color: black;">→ Профиль проекта Scholar Google Citations: публикации, авторы и соавторы</span></a></div>
-
+<hr>
+<h3>Анимация скольжения вниз</h3>
+<pre class="brush:html">
+     <div class="revealator-slidedown revealator-once revealator-once">
+        <img src="#" alt="анимация скольжения вниз">
+    </div>
     
-    <script src="https://emiia.github.io/svg.github.io/jquery-1.11.3.min.js"></script>
-<script src="https://emiia.github.io/svg.github.io/fm.revealator.jquery.min.js"></script>
+    <div class="revealator-slidedown revealator-once revealator-delay1 revealator-once">
+        <img src="#" alt="анимация скольжения вниз с задержкой эффекта на 100ms">
+    </div>
     
-  </body>
+    <div class="revealator-slidedown revealator-once revealator-delay2 revealator-once">
+        <img src="#" alt="анимация скольжения вниз с задержкой эффекта на 200ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-slidedown revealator-once revанимация скольжения внизealator-once">
+    <img src="/assets/theme/images/blog/4.jpg" alt="" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slidedown revealator-once revealator-delay1 revealator-once">
+    <img src="/assets/theme/images/blog/5.jpg" alt="анимация скольжения вниз с задержкой эффекта на 100ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slidedown revealator-once revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/6.jpg" alt="анимация скольжения вниз с задержкой эффекта на 200ms">
+</div>
+
+<hr>
+<h3>Анимация скольжения влево</h3>
+<pre class="brush:html">
+     <div class="revealator-slideleft revealator-once">
+        <img src="#" alt="анимация скольжения влево">
+    </div>
+    
+    <div class="revealator-slideleft revealator-delay2 revealator-once">
+        <img src="#" alt="анимация скольжения влево с задержкой эффекта на 200ms">
+    </div>
+    
+    <div class="revealator-slideleft revealator-delay4 revealator-once">
+        <img src="#" alt="анимация скольжения влево с задержкой эффекта на 400ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-slideleft revealator-once">
+    <img src="/assets/theme/images/blog/7.jpg" alt="анимация скольжения влево" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slideleft revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/8.jpg" alt="анимация скольжения влево с задержкой эффекта на 200ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slideleft revealator-delay4 revealator-once">
+    <img src="/assets/theme/images/blog/9.jpg" alt="анимация скольжения влево с задержкой эффекта на 400ms">
+</div>
+
+
+<hr>
+<h3>Анимация скольжения вправо</h3>
+<pre class="brush:html">
+     <div class="revealator-slideright revealator-once">
+        <img src="#" alt="анимация скольжения вправо">
+    </div>
+    
+    <div class="revealator-slideright revealator-delay2 revealator-once">
+        <img src="#" alt="анимация скольжения вправо с задержкой эффекта на 200ms">
+    </div>
+    
+    <div class="revealator-slideright revealator-delay4 revealator-once">
+        <img src="#" alt="анимация скольжения вправо с задержкой эффекта на 400ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-slideright revealator-once">
+    <img src="/assets/theme/images/blog/10.jpg" alt="анимация скольжения вправо" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slideright revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/11.jpg" alt="анимация скольжения вправо с задержкой эффекта на 200ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-slideright revealator-delay4 revealator-once">
+    <img src="/assets/theme/images/blog/12.jpg" alt="анимация скольжения вправо с задержкой эффекта на 400ms">
+</div>
+
+
+<hr>
+<h3>Анимация приближения</h3>
+<pre class="brush:html">
+     <div class="revealator-zoomin revealator-once">
+        <img src="#" alt="анимация приближения">
+    </div>
+    
+    <div class="revealator-zoomin revealator-delay1 revealator-once">
+        <img src="#" alt="анимация приближения задержкой эффекта на 100ms">
+    </div>
+    
+    <div class="revealator-zoomin revealator-delay2 revealator-once">
+        <img src="#" alt="анимация приближения с задержкой эффекта на 200ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-zoomin revealator-once">
+    <img src="/assets/theme/images/blog/13.jpg" alt="анимация приближения" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-zoomin revealator-delay1 revealator-once">
+    <img src="/assets/theme/images/blog/14.jpg" alt="анимация приближения задержкой эффекта на 100ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-zoomin revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/15.jpg" alt="анимация приближения с задержкой эффекта на 200ms">
+</div>
+
+
+<hr>
+<h3>Анимация уменьшения</h3>
+<pre class="brush:html">
+     <div class="revealator-zoomout revealator-once">
+        <img src="#" alt="анимация уменьшения">
+    </div>
+    
+    <div class="revealator-zoomout revealator-delay1 revealator-once">
+        <img src="#" alt="анимация уменьшения с задержкой эффекта на 100ms">
+    </div>
+    
+    <div class="revealator-zoomout revealator-delay2 revealator-once">
+        <img src="#" alt="анимация уменьшения с задержкой эффекта на 200ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-zoomout revealator-once">
+    <img src="/assets/theme/images/blog/16.jpg" alt="анимация уменьшения" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-zoomout revealator-delay1 revealator-once">
+    <img src="/assets/theme/images/blog/17.jpg" alt="анимация уменьшения с задержкой эффекта на 100ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-zoomout revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/18.jpg" alt="анимация уменьшения с задержкой эффекта на 200ms">
+</div>
+
+
+<hr>
+<h3>Анимация постепенного появления</h3>
+<pre class="brush:html">
+     <div class="revealator-fade revealator-duration10 revealator-once">
+        <img src="#" alt="анимация постепенного появления">
+    </div>
+    
+    <div class="revealator-fade revealator-delay2 revealator-duration10 revealator-once">
+        <img src="#" alt="анимация постепенного появления с задержкой эффекта на 200ms">
+    </div>
+    
+    <div class="revealator-fade revealator-delay4 revealator-duration10 revealator-once">
+        <img src="#" alt="анимация постепенного появления с задержкой эффекта на 400ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-fade revealator-duration10 revealator-once">
+    <img src="/assets/theme/images/blog/19.jpg" alt="анимация постепенного появления" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-fade revealator-delay2 revealator-duration10 revealator-once">
+    <img src="/assets/theme/images/blog/20.jpg" alt="анимация постепенного появления с задержкой эффекта на 200ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-fade revealator-delay4 revealator-duration10 revealator-once">
+    <img src="/assets/theme/images/blog/21.jpg" alt="анимация постепенного появления с задержкой эффекта на 400ms">
+</div>
+
+
+<hr>
+<h3>Анимация поворота влево</h3>
+<pre class="brush:html">
+     <div class="revealator-rotateleft revealator-once">
+        <img src="#" alt="анимация поворота влево">
+    </div>
+    
+    <div class="revealator-rotateleft revealator-delay1 revealator-once">
+        <img src="#" alt="анимация поворота влево с задержкой эффекта на 100ms">
+    </div>
+    
+    <div class="revealator-rotateleft revealator-delay2 revealator-once">
+        <img src="#" alt="анимация поворота влево с задержкой эффекта на 200ms">
+    </div>
+</pre>
+<br/>
+<div class="revealator-rotateleft revealator-once">
+    <img src="/assets/theme/images/blog/22.jpg" alt="анимация поворота влево" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-rotateleft revealator-delay1 revealator-once">
+    <img src="/assets/theme/images/blog/23.jpg" alt="анимация поворота влево с задержкой эффекта на 100ms" style="float: left;margin-right: 3px;">
+</div>
+<div class="revealator-rotateleft revealator-delay2 revealator-once">
+    <img src="/assets/theme/images/blog/24.jpg" alt="анимация поворота влево с задержкой эффекта на 200ms">
+</div>
+
+<hr>
+<h3>Анимация поворота вправо</h3>
+<pre class="brush:html">
+     <div class="revealator-rotateright revealator-once">
+        <img src="#" alt="анимация поворота вправо">
+    </div>
+</pre>
+<br/>
+<div class="revealator-rotateright revealator-once">
+    <video src="/assets/theme/images/blog/video.mp4" controls></video>
+</div>
+
+
+						
+						<hr/>
+						<h4>Похожие статьи:</h4>
+                        <a href="blog/javascript-and-jquery/no-adblock">Как попросить посетителей своего сайта отключить AdBlock</br></a>
+<a href="blog/javascript-and-jquery/timer-js">Обратный таймер на JavaScript</br></a>
+<a href="blog/javascript-and-jquery/email-mask">Как сделать маску для ввода E-mail типа &#9654; pochta@mail.ru</br></a>
+<a href="blog/javascript-and-jquery/scrollbar-div">Как создать div блок с прокруткой на JS?</br></a>
+<a href="blog/javascript-and-jquery/scroll-top-and-bottom">Скролинг страницы вверх и вниз по клику на кнопку</br></a>
+<a href="blog/javascript-and-jquery/calculator-jquery">Калькулятор расчета стоимости натяжных потолков на jQuery</br></a>
+<a href="blog/javascript-and-jquery/parallaks-effekt-rellax">Parallax эффект для одиночного элемента с библиотекой RELLAX</br></a>
+<a href="blog/javascript-and-jquery/plavnaya-prokrutka-straniczyi-posle-nazhatiya-na-yakornuyu-ssyilku">Плавная прокрутка страницы после нажатия на якорную ссылку</br></a>
+						
+						
+						<div id="money" class="revealator-slideright revealator-once hidden-xs">
+						    <h4>Понравилась статья? Поблагодари автора, накорми печеньками! :)</h4>
+                            <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%9D%D0%B0%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D1%83%20%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B5%D0%BA%20%D0%BA%20%D1%87%D0%B0%D1%8E%20%5E_%5E&targets-hint=&default-sum=10&button-text=13&payment-type-choice=on&mobile-payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410014688286965" width="423" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+                        </div>
+                        
+                        <div class="row blog-tags">
+                            <div class="col-md-9">
+            					
+    				        </div>
+				        </div>
+				        
+				        <div class="col-md-12 blog-comments">
+        					<div class="comments">
+
+
+	<h3 class="title">Комментарии (<span id="comment-total"></span>)</h3>
+
+	<div id="comments-wrapper">
+		<ol class="comment-list" id="comments"></ol>
+	</div>
+
+	<div id="comments-tpanel">
+		<div id="tpanel-refresh"></div>
+		<div id="tpanel-new"></div>
+	</div>
+</div>
+	<div class="ticket-comments alert alert-warning">
+    <p>Вы должны авторизоваться, чтобы оставлять комментарии.</p>
+</div>
+        					Вы можете авторизоваться на сайте через: 
+<br/>
+<a href="https://obninsksite.ru/blog/javascript-and-jquery/jquery-animacziya-dlya-sajta-effektyi-poyavleniya-div-blokov?hauth_action=login&amp;provider=Yandex" class="ha-icon yandex" rel="nofollow" title="Yandex">Yandex</a><a href="https://obninsksite.ru/blog/javascript-and-jquery/jquery-animacziya-dlya-sajta-effektyi-poyavleniya-div-blokov?hauth_action=login&amp;provider=Vkontakte" class="ha-icon vkontakte" rel="nofollow" title="Vkontakte">Vkontakte</a>
+
+
+					    </div>
+                        
+					</div>
+					<div class="col-md-3">
+						<div class="col-md-12 hot-sidebar">
+                            <h3>Рубрики блога</h3>
+<hr class="hidden-xs">
+  <ul class="category-list"><li><a href="blog/php-scripts" >PHP скрипты</a><span>8</span></li><li><a href="blog/javascript-and-jquery" >Javascript & jQuery</a><span>9</span></li><li><a href="blog/html-and-css" >HTML и CSS</a><span>11</span></li><li><a href="blog/modx-revo" >MODX Revo</a><span>6</span></li><li><a href="blog/wordpress" >WordPress</a><span>1</span></li><li><a href="blog/freelance" >Уроки для фрилансеров</a><span>3</span></li></ul>
+<!--div style="margin-top: 20px;">
+    <iframe src="//webartex.ru/widget/calc.240x400.html?r=lykbcfgr" frameborder="0" width="240" height="400" border="0" allowtransparency="true" scrolling="no" style="margin: 0;padding: 0;"></iframe>
+</div-->
+
+<div style="margin-top: 20px;">
+
+</div>
+
+<!--div id="instruments">
+<h3>Мои инструменты</h3>
+<hr class="hidden-xs">
+<ul class="category-list">
+    <li id="hostia"><a rel="nofollow" target="_blank" href="https://goo.gl/X23buA">Отличный и недорогой хостинг</a></li>
+    <li id="textsale"><a rel="nofollow" target="_blank" href="https://goo.gl/khGHRS">Покупка статей для сайта</a></li>
+    <li id="bootstrap"><a rel="nofollow" target="_blank" href="/assets/theme/upload/Bootstrap.zip">Моя сборка Bootstrap [скачать]</a></li>
+</ul>
+</div-->
+
+<!--div id="part_time">
+<h3>Здесь я зарабатываю </h3>
+<hr class="hidden-xs">
+<ul class="category-list">
+    <li id="kwork"><a rel="nofollow" target="_blank" href="https://goo.gl/4ErnRq">Площадка для фрилансеров</a></li>
+    <li id="otzovik"><a rel="nofollow" target="_blank" href="https://goo.gl/2DxT3w">Платят деньги за отзывы</a></li>
+    <li id="webartex"><a rel="nofollow" target="_blank" href="https://webartex.ru/?r=lykbcfgr">Монетизация соц.сетей и блога</a></li>
+</ul>
+</div-->
+
+
+<div id="popular_blog">
+<h3>Популярное</h3>
+<hr class="hidden-xs">
+    <ul class="popular-list"><li><a href="blog/php-scripts/php-parser" >Универсальный и очень простой PHP парсер</a> <span class="label label-danger"> +2</span></li></ul>
+<ul class="popular-list"><li><a href="blog/html-and-css/krasivyie-css3-knopki-s-animacziej-i-hover-effektami" >Красивые CSS3 кнопки с анимацией и hover эффектами</a> <span class="label label-danger"> +2</span></li></ul>
+<ul class="popular-list"><li><a href="blog/php-scripts/lesson-redbeanphp" >Пишем на SQL без SQL: основы по RedBean PHP</a> <span class="label label-danger"> +2</span></li></ul>
+<ul class="popular-list"><li><a href="blog/javascript-and-jquery/jquery-animacziya-dlya-sajta-effektyi-poyavleniya-div-blokov" >jQuery анимация для сайта - эффекты появления DIV блоков</a> <span class="label label-danger"> +1</span></li></ul>
+<ul class="popular-list"><li><a href="blog/javascript-and-jquery/plavnaya-prokrutka-straniczyi-posle-nazhatiya-na-yakornuyu-ssyilku" >Плавная прокрутка страницы после нажатия на якорную ссылку</a> <span class="label label-danger"> +1</span></li></ul>
+</div>
+<div id="new_comment" style="margin-bottom: 40px;">
+    <h3>Последние комментарии</h3>
+    <hr class="hidden-xs">
+    <div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Даниил Шрамков</span> <span class="date">09 марта 2019, 20:00</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/php-scripts/authorization-registration-php#comment-144">Защищенная Авторизация и Регистрация на PHP + MySQL через PDO</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">75</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Андрей Карманов</span> <span class="date">08 марта 2019, 08:05</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/php-scripts/lesson-redbeanphp#comment-139">Пишем на SQL без SQL: основы по RedBean PHP</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">13</span></nobr>
+</div>
+<div class="tickets-latest-row ticket-comment-guest">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Денис</span> <span class="date">27 февраля 2019, 14:55</span>
+	<br/>
+	<span class="ticket">
+		<a href="shop/parser-content/webparser#comment-108">WebParser - автоматический парсер контента</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">3</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Алексей Власов</span> <span class="date">08 февраля 2019, 21:50</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/php-scripts/form-of-feedback-ajax#comment-99">Удобная форма обратной связи без перезагрузки страницы</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">10</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Alexander Larin</span> <span class="date">14 января 2019, 12:31</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/javascript-and-jquery/no-adblock#comment-89">Как попросить посетителей своего сайта отключить AdBlock</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">1</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Леонид Кобяшев</span> <span class="date">26 декабря 2018, 20:20</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/javascript-and-jquery/timer-js#comment-88">Обратный таймер на JavaScript</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">1</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Алексей Власов</span> <span class="date">16 октября 2018, 14:27</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/php-scripts/php-parser#comment-78">Универсальный и очень простой PHP парсер</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">10</span></nobr>
+</div>
+<div class="tickets-latest-row">
+	<span class="user"><i class="glyphicon glyphicon-user"></i> Алексей Власов</span> <span class="date">13 октября 2018, 18:57</span>
+	<br/>
+	<span class="ticket">
+		<a href="blog/modx-revo/beskonechnoe-soxranenie-resursov-v-modx#comment-73">Бесконечное сохранение ресурсов в MODX</a>
+	</span>
+	<nobr><i class="glyphicon glyphicon-comment"></i> <span class="comments">2</span></nobr>
+</div>
+</div>
+
+<div id="fixblock">
+    <!--iframe src="//webartex.ru/widget/calc.240x400.html?r=lykbcfgr" frameborder="0" width="240" height="400" border="0" allowtransparency="true" scrolling="no" style="margin: 0;padding: 0;"></iframe-->
+    <!--a href="https://kwork.ru?ref=651027" rel="nofollow" target="_blank"><img src="https://kwork.ru/images/partner/05.jpg" alt="Kwork.ru - услуги фрилансеров от 500 руб."></a-->
+    <!--a href="https://goo.gl/X23buA" rel="nofollow" target="_blank"><img src="/assets/theme/images/myhoster.gif" alt="хостинг"></a-->
+</div>
+
+
+
+
+
+                        </div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+   		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-4 col-xs-12 text-left" id="footer_1">
+						<h3><span>Как со мной связаться</span></h3>
+						<p id="name-footer">Контактное лицо: Алексей</p>
+						<p id="phone-footer">Телефон: <a href="tel:+79997354578">+7 (999) 735-45-78</a></p>
+						<p id="mail-footer">E-mail: <a href="mailto:info@obninsksite.ru">info@obninsksite.ru</a> </p>
+						<p id="skype-footer">Skype: info_778267</p>
+					</div>
+					<div class="col-sm-4 col-md-4 col-xs-12 text-center">
+						<h3><span>Режим работы</span></h3>
+						<p>Понедельник-Пятница: 10.00 - 19.00</p>
+						<p>Суббота-Воскресенье: Выходной</p>
+						<br>
+						<div id="toTop" class="btn hvr-trim btn-lg revealator-slideup revealator-delay1 revealator-once">Вверх</div>
+					</div>
+					<div class="col-sm-4 col-md-4 col-xs-12 text-right hidden-xs">
+						<h3><span>Быстрые ссылки</span></h3>
+						<ul id="link-footer">
+							<li><a href="/">Заказать сайт в Обнинске</a></li>
+							<li><a href="/index/services">Услуги программиста</a></li>
+							<li><a href="/free-template">Шаблоны сайтов</a></li>
+							<li><a href="/blog">Блог программиста</a></li>
+							<li><a href="/sitemap-html">Карта сайта</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="/assets/theme/js/bootstrap.js" defer></script>	
+   <script src="/assets/theme/js/top.js" defer></script>	
+   <!--script src="/assets/theme/js/loader.js"></script-->
+   <script src="/assets/theme/js/loader-new.js"></script>
+   <script src="/assets/theme/js/navigation.js" defer></script>   
+   <script src="https://www.google.com/recaptcha/api.js?render=6Ldv9Y8UAAAAAMNP3wGMufqAjeNWTUeZjRxcjYgB" defer></script>
+   <script src="/assets/theme/js/form-message.js" defer></script>
+   <script src="/assets/theme/animation/fm.revealator.jquery.min.js" defer></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47009055 = new Ya.Metrika({
+                    id:47009055,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47009055" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+   <script type="text/javascript">
+    function getTopOffset(e) { 
+    	var y = 0;
+    	do { y += e.offsetTop; } while (e = e.offsetParent);
+    	return y;
+    }
+    var block = document.getElementById('fixblock'); /* fixblock - значение атрибута id блока */
+    if ( null != block ) {
+    	var topPos = getTopOffset( block );
+    	window.onscroll = function() {
+    		var newcss = (topPos < window.pageYOffset) ? 
+    			'top:100px; position: fixed;' : 'position:static;';
+    		block.setAttribute( 'style', newcss );
+    	}
+    }
+    </script>
+   
+
+
+<script type="text/javascript">
+     SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="/assets/components/tickets/js/web/editor/jquery.markitup.js"></script>
+<script type="text/javascript" src="/assets/components/tickets/js/web/default.js"></script>
+</body>
 </html>
-    
-    
-    
-    
